@@ -46,11 +46,7 @@ class Controller
 
 	private function _performChecks()
 	{
-		$action = S('Request')->getDir(0);
-		if( $action == 'brand1' )
-		{
-			$action = S('Request')->getDir(1);
-		}
+		$action = S('Request')->getDir(1)? S('Request')->getDir(1) : S('Request')->getDir(0);
 
 		if( !$this->_isSubscribed() && ($action != 'subscribe') )
 		{
